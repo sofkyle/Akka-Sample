@@ -4,6 +4,8 @@ import akka.actor.AbstractActor;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Author: Finance Group
@@ -22,7 +24,7 @@ public class Printer extends AbstractActor {
         }
     }
 
-    private LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
+    private static final Logger logger = LoggerFactory.getLogger(Printer.class);
 
     public Printer() {
     }
@@ -30,7 +32,7 @@ public class Printer extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder().match(Greeting.class, greeting -> {
-            log.info(greeting.message);
+            logger.info(greeting.message);
         }).build();
     }
 }
