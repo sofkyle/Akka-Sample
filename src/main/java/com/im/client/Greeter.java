@@ -1,4 +1,4 @@
-package per.zyf.client;
+package com.im.client;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;

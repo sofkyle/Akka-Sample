@@ -1,9 +1,7 @@
-package per.zyf.client;
+package com.im.client;
 
 import akka.actor.AbstractActor;
 import akka.actor.Props;
-import akka.event.Logging;
-import akka.event.LoggingAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
