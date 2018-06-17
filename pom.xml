@@ -5,15 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>per.zyf</groupId>
-    <artifactId>client</artifactId>
+    <artifactId>IM-Akka-Netty</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <parent>
-        <groupId>per.zyf</groupId>
-        <artifactId>IM-Akka-Netty</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <modules>
+        <module>server</module>
+        <module>client</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
