@@ -1,4 +1,4 @@
-package com.im.client;
+package client;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
