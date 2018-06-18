@@ -1,8 +1,8 @@
-package client;
+package com.im.sender;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import com.im.client.Greeter.*;
+import com.im.sender.Greeter.*;
 
 import java.io.IOException;
 
@@ -23,16 +23,16 @@ public class AkkaQuickstart {
             final ActorRef goodDayGreeter =
                     system.actorOf(Greeter.props("Good day", printerActor), "goodDayGreeter");
 
-            howdyGreeter.tell(new WhoToGreet("Akka"), ActorRef.noSender());
+            howdyGreeter.tell(new WhoToGreet("Akka"), howdyGreeter);
             howdyGreeter.tell(new Greet(), ActorRef.noSender());
 
-            howdyGreeter.tell(new WhoToGreet("Lightbend"), ActorRef.noSender());
+            howdyGreeter.tell(new WhoToGreet("Lightbend"), howdyGreeter);
             howdyGreeter.tell(new Greet(), ActorRef.noSender());
 
-            helloGreeter.tell(new WhoToGreet("Java"), ActorRef.noSender());
+            helloGreeter.tell(new WhoToGreet("Java"), helloGreeter);
             helloGreeter.tell(new Greet(), ActorRef.noSender());
 
-            goodDayGreeter.tell(new WhoToGreet("Play"), ActorRef.noSender());
+            goodDayGreeter.tell(new WhoToGreet("Play"), goodDayGreeter);
             goodDayGreeter.tell(new Greet(), ActorRef.noSender());
 
             System.out.println(">>> Press ENTER to exit <<<");

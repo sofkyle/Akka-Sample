@@ -1,11 +1,11 @@
-package client;
+package com.im.sender;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 
 /**
- * @Author: Finance Group
+ * @Author: Kyle
  * @Date: 2018/6/14 15:30
  */
 public class Greeter extends AbstractActor {

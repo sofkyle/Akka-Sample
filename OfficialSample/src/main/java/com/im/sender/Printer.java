@@ -1,4 +1,4 @@
-package client;
+package com.im.sender;
 
 import akka.actor.AbstractActor;
 import akka.actor.Props;
@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @Author: Finance Group
+ * @Author: Kyle
  * @Date: 2018/6/14 15:38
  */
 public class Printer extends AbstractActor {
