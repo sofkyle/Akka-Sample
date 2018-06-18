@@ -11,11 +11,11 @@ public class AppMain {
     public static void main(String[] args) {
         final ActorSystem system = ActorSystem.create();
         try {
-            final ActorRef componentOneActor = system.actorOf(ComponentOneActor.props(), "componentOneActor");
-            final ActorRef componentTwoActor = system.actorOf(ComponentTwoActor.props(), "componentTwoActor");
+            final ActorRef guest1 = system.actorOf(AccountActor.props(100), "guest1");
+            final ActorRef guest2 = system.actorOf(AccountActor.props(100), "guest2");
 
-            componentOneActor.tell(new ComponentTwoActor.ComponentTwoMsg("first msg"), ActorRef.noSender());
-            componentTwoActor.tell(new ComponentOneActor.ComponentOneMsg("second msg"), ActorRef.noSender());
+            final ActorRef cooperator = system.actorOf(CooperatorActor.props(), "cooperator");
+            cooperator.tell(new CooperatorActor.TransferMsg(guest1, guest2, 100), ActorRef.noSender());
 
             System.out.println(">>> Press ENTER to exit <<<");
             System.in.read();
