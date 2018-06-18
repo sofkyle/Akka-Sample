@@ -1,4 +1,4 @@
-package com.communication;
+package com.akkasample.deal;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;

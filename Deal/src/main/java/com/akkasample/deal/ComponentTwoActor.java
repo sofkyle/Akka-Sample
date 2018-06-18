@@ -1,9 +1,7 @@
-package com.communication;
+package com.akkasample.deal;
 
 import akka.actor.AbstractActor;
 import akka.actor.Props;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @Author: Kyle

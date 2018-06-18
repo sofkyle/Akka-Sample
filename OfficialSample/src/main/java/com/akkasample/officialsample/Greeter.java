@@ -1,4 +1,4 @@
-package com.im.sender;
+package com.akkasample.officialsample;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
