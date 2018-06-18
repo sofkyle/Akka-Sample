@@ -8,9 +8,9 @@ import akka.actor.Props;
  * @author Kyle
  * @create 2018/6/18 20:07
  */
-public class CooperatorActor extends AbstractActor {
+public class CooperateActor extends AbstractActor {
     static public Props props() {
-        return Props.create(CooperatorActor.class, () -> new CooperatorActor());
+        return Props.create(CooperateActor.class, () -> new CooperateActor());
     }
 
     /**
@@ -21,6 +21,12 @@ public class CooperatorActor extends AbstractActor {
         private final ActorRef toAccount;
         private final Integer money;
 
+        /**
+         * 转账消息
+         * @param fromAccount
+         * @param toAccount
+         * @param money
+         */
         public TransferMsg(ActorRef fromAccount, ActorRef toAccount, Integer money) {
             this.fromAccount = fromAccount;
             this.toAccount = toAccount;
@@ -46,6 +52,9 @@ public class CooperatorActor extends AbstractActor {
                 .match(TransferMsg.class, transferMsg -> {
                     // 发送扣款消息
                     transferMsg.getFromAccount().tell(new AccountActor.DeductMsg(transferMsg.getMoney()), getSelf());
+
+                    // TODO: 获取返回结果
+
                     // 发送入账消息
                     transferMsg.getToAccount().tell(new AccountActor.AddMsg(transferMsg.getMoney()), getSelf());
                 })

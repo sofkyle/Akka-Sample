@@ -17,7 +17,7 @@ public class AccountActor extends AbstractActor {
     }
 
     /**
-     * 减少金额消息
+     * 扣款消息
      */
     static public class DeductMsg {
         private final Integer money;
@@ -32,7 +32,7 @@ public class AccountActor extends AbstractActor {
     }
 
     /**
-     * 增加金额消息
+     * 入账消息
      */
     static public class AddMsg {
         private final Integer money;

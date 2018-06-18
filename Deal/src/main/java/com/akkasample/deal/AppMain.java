@@ -14,8 +14,8 @@ public class AppMain {
             final ActorRef accountA = system.actorOf(AccountActor.props(100), "accountA");
             final ActorRef accountB = system.actorOf(AccountActor.props(100), "accountB");
 
-            final ActorRef cooperator = system.actorOf(CooperatorActor.props(), "cooperator");
-            cooperator.tell(new CooperatorActor.TransferMsg(accountA, accountB, 100), ActorRef.noSender());
+            final ActorRef cooperator = system.actorOf(CooperateActor.props(), "cooperator");
+            cooperator.tell(new CooperateActor.TransferMsg(accountA, accountB, 100), ActorRef.noSender());
 
             System.out.println(">>> Press ENTER to exit <<<");
             System.in.read();
