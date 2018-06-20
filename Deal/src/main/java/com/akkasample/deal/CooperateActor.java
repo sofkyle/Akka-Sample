@@ -21,12 +21,6 @@ public class CooperateActor extends AbstractActor {
         private final ActorRef toAccount;
         private final Integer money;
 
-        /**
-         * 转账消息
-         * @param fromAccount
-         * @param toAccount
-         * @param money
-         */
         public TransferMsg(ActorRef fromAccount, ActorRef toAccount, Integer money) {
             this.fromAccount = fromAccount;
             this.toAccount = toAccount;
